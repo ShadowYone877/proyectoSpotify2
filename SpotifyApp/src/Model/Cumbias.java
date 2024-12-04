@@ -1,5 +1,7 @@
 package Model;
 
-public class Cumbias {
-
+public class Cumbias extends Genero {
+    public Cumbias() {
+        super("Pop en Inglés");
+    }
 }

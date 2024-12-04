@@ -1,25 +1,22 @@
 package Model;
-import Repository.Album;
+
 import java.util.ArrayList;
 import java.util.List;
-
-public class Artist {
+public class Genero {
     private String nombre;
-    private List<Album> albums;
     private List<Song> canciones;
 
-    public Artist(String nombre) {
+    public Genero(String nombre) {
         this.nombre = nombre;
-        this.albums = new ArrayList<>();
         this.canciones = new ArrayList<>();
     }
 
-    public List<Song> obtenerCancionesPopulares() {
-        return canciones.subList(0, Math.min(canciones.size(), 5)); // Ejemplo
+    public void agregarCanción(Song cancion) {
+        canciones.add(cancion);
     }
 
-    public void agregarAlbum(Album album) {
-        albums.add(album);
+    public List<Song> obtenerCancionesPopulares() {
+        return canciones.subList(0, Math.min(canciones.size(), 5));
     }
 
     public String getNombre() {
@@ -30,14 +27,6 @@ public class Artist {
         this.nombre = nombre;
     }
 
-    public List<Album> getAlbums() {
-        return albums;
-    }
-
-    public void setAlbums(List<Album> albums) {
-        this.albums = albums;
-    }
-
     public List<Song> getCanciones() {
         return canciones;
     }
@@ -45,6 +34,7 @@ public class Artist {
     public void setCanciones(List<Song> canciones) {
         this.canciones = canciones;
     }
+
 
 }
 
