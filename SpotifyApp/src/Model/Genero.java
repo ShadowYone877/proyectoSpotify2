@@ -16,7 +16,7 @@ public class Genero {
     }
 
     public List<Song> obtenerCancionesPopulares() {
-        return canciones.subList(0, Math.min(canciones.size(), 5));
+        return canciones;
     }
 
     public String getNombre() {

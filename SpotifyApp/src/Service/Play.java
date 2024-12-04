@@ -28,5 +28,21 @@ public class Play {
         }
     }
 
-    // Getters y Setters
+    public Contenido getContenidoActual() {
+        return contenidoActual;
+    }
+
+    public void setContenidoActual(Contenido contenidoActual) {
+        this.contenidoActual = contenidoActual;
+    }
+
+    public int getTiempoActual() {
+        return tiempoActual;
+    }
+
+    public void setTiempoActual(int tiempoActual) {
+        this.tiempoActual = tiempoActual;
+    }
+
+
 }
