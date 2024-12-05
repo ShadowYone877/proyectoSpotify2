@@ -1,15 +1,14 @@
 package UI;
-
+import Service.Animated;
 import java.util.Scanner;
-
 public class MainMenu {
-    private Scanner scanner;
+    private Scanner opc;
 
     public MainMenu() {
-        scanner = new Scanner(System.in);
+        opc = new Scanner(System.in);
     }
 
-    public void mostrarMenú() {
+    public void mostrarMenu() {
         int opcion;
         do {
             System.out.println("\n=== Menú Principal ===");
@@ -18,16 +17,18 @@ public class MainMenu {
             System.out.println("3. Mi Biblioteca");
             System.out.println("4. Cerrar");
             System.out.print("Seleccione una opción: ");
-            opcion = scanner.nextInt();
+            opcion = opc.nextInt();
 
             switch (opcion) {
                 case 1:
-                    mostrarMenúLogin();
+                    mostrarMenuLogin();
                     break;
                 case 2:
-                    mostrarMenúExplorar();
+                    Animated.mostrarAnimaciónCargando();
+                    mostrarMenuExplorar();
                     break;
                 case 3:
+                    Animated.mostrarAnimaciónCargando();
                     mostrarMiBiblioteca();
                     break;
                 case 4:
@@ -39,12 +40,12 @@ public class MainMenu {
         } while (opcion != 4);
     }
 
-    private void mostrarMenúLogin() {
+    private void mostrarMenuLogin() {
         UserMenu loginUI = new UserMenu();
         loginUI.mostrar();
     }
 
-    private void mostrarMenúExplorar() {
+    private void mostrarMenuExplorar() {
         ExploreMenu explorarUI = new ExploreMenu();
         explorarUI.mostrar();
     }

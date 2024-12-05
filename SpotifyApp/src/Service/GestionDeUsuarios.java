@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GestionDeUsuarios {
-    private static List<User> usuarios;
+
+    private static final List<User> usuarios = new ArrayList<>();
     public List<User> usuarios1;
+
     public static void createUsers() {
         Perfil perfil1 = new Perfil("Juan Pérez", "Español", new Preferencias());
         FreeUser usuarioGratis = new FreeUser("Juan", "juan@mail.com", perfil1);
@@ -21,6 +23,7 @@ public class GestionDeUsuarios {
         usuarios.add(usuarioGratis);
         usuarios.add(usuarioPremium);
     }
+
     public static void showUsers() {
         // Verificar si la lista está vacía
         if (usuarios.isEmpty()) {
@@ -36,6 +39,7 @@ public class GestionDeUsuarios {
             }
         }
     }
+
     public GestionDeUsuarios() {
         this.usuarios1 = new ArrayList<>();
     }
@@ -70,6 +74,5 @@ public class GestionDeUsuarios {
     public void setUsuarios(List<User> usuarios) {
         this.usuarios1 = usuarios;
     }
-    
-}
 
+}

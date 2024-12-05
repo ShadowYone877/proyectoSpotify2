@@ -1,7 +1,7 @@
 package UI;
-
+import Service.Animated;
+import Service.GestionDeUsuarios;
 import java.util.Scanner;
-
 public class ExploreMenu {
     private Scanner scanner;
 
@@ -16,21 +16,33 @@ public class ExploreMenu {
             System.out.println("1. Ver Novedades");
             System.out.println("2. Canciones del Momento");
             System.out.println("3. Buscar Género");
-            System.out.println("4. Regresar al Menú Principal");
+            System.out.println("4. Mostrar usuarios");
+            System.out.println("5. Regresar al Menú Principal");
             System.out.print("Seleccione una opción: ");
             opcion = scanner.nextInt();
 
             switch (opcion) {
                 case 1:
+                    Animated.mostrarAnimaciónCargando();
                     mostrarNovedades();
                     break;
                 case 2:
+                    Animated.mostrarAnimaciónCargando();
                     mostrarCancionesDelMomento();
                     break;
                 case 3:
+                    Animated.mostrarAnimaciónCargando();
                     buscarGénero();
                     break;
+
                 case 4:
+                    Animated.mostrarAnimaciónCargando();
+                    System.out.println("Listo!");
+                    GestionDeUsuarios.createUsers();
+                    GestionDeUsuarios.showUsers();
+                    break;
+
+                case 5:
                     System.out.println("Regresando al menú principal...");
                     break;
                 default:
